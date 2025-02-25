@@ -1,0 +1,12 @@
+[submodule "marmite-bin"]
+	path = marmite-bin
+	url = ssh://aur@aur.archlinux.org/marmite-bin.git
+[submodule "mochi-appimage"]
+	path = mochi-appimage
+	url = ssh://aur@aur.archlinux.org/mochi-appimage.git
+[submodule "python-validity"]
+	path = python-validity
+	url = ssh://aur@aur.archlinux.org/python-validity.git
+[submodule "rbenv"]
+	path = rbenv
+	url = ssh://aur@aur.archlinux.org/rbenv.git
