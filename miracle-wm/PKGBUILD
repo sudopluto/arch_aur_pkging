@@ -9,7 +9,7 @@ arch=('i686' 'x86_64' 'armv7h' 'aarch64')
 url="https://github.com/miracle-wm-org/miracle-wm"
 license=('GPL-3.0-or-later')
 depends=('mir' 'libnotify')
-makedepends=('cmake' 'yaml-cpp' 'nlohmann-json')
+makedepends=('cmake' 'yaml-cpp' 'nlohmann-json' 'ninja')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('250bfe04f3f887f64bb7dfa98c9d6f56827ca628b68851424a20b5783ba13482')
 
