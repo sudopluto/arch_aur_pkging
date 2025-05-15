@@ -1,0 +1,3 @@
+[python-validity]
+source = "git"
+git = "https://github.com/uunicorn/python-validity.git"

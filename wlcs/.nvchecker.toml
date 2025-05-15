@@ -1,0 +1,4 @@
+[wlcs]
+source = "git"
+git = "https://github.com/canonical/wlcs.git"
+prefix = "v"
