@@ -6,7 +6,7 @@
 # Contributor: kikadf <kikadf.01@gmail.com>
 
 pkgname=mir
-pkgver=2.20.2
+pkgver=2.22.0
 pkgrel=1
 pkgdesc="Canonical's display server"
 url="https://github.com/canonical/mir"
@@ -17,7 +17,7 @@ depends=(boost-libs libglvnd lttng-ust libepoxy libxml++2.6 libinput yaml-cpp
          egl-wayland wayland
          glib2 glibc gcc-libs util-linux-libs libxcb libxkbcommon-x11 libdrm mesa libx11 gtest glibmm
          # explicit depends 
-         bash systemd-libs
+         bash systemd-libs libdisplay-info pixman
 )
 makedepends=(glm doxygen graphviz cmake ninja boost umockdev wlcs glmark2
              python-pillow python-dbus
@@ -31,7 +31,7 @@ optdepends=('qterminal: required for miral demos'
             'xcursor-dmz: opt requirement for miral demos')
 options=()
 source=("https://github.com/canonical/mir/releases/download/v${pkgver}/mir-${pkgver}.tar.xz")
-sha256sums=('c8994ba14d986d484daaec6c0ccb5f4ca7eb52746167899991a0983772c0fda8')
+sha256sums=('6015f1d1919bea1c2f5ecab43a98f525572a005947ae9fb7d05a91251130dd35')
 
 # glm doesnt ship with a glm.pc, but mir build falls back on cmake's find_package for non-debian systems
 
