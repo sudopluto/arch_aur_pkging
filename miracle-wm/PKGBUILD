@@ -2,8 +2,8 @@
 # Maintainer: Pranav Sharma <pranav.sharma.ama@gmail.com>
 # Contributor: twa022 <twa022 at gmail dot com>
 
-pkgname=miracle-wm
-pkgver=0.7.1
+pkgname=miracle-wm-ninja
+pkgver=0.9.0
 pkgrel=1
 pkgdesc="Wayland compositor based on mir"
 arch=('i686' 'x86_64' 'armv7h' 'aarch64')
@@ -11,24 +11,26 @@ url="https://github.com/miracle-wm-org/miracle-wm"
 license=('GPL-3.0-or-later')
 depends=('mir'
          # implicit depends
-         'libglvnd' 'yaml-cpp' 'bash' 'json-c' 'gcc-libs' 'libevdev' 'glib2' 'pcre2' 'glibc' 'wayland'
+         'libglvnd' 'yaml-cpp' 'bash' 'json-c' 'libgcc' 'libstdc++' 'glib2' 'pcre2' 'glibc' 'wayland'
          'python' 'python-tenacity' 'python-dbus-next'
          'libxkbcommon'
     )
 makedepends=('cmake' 'nlohmann-json' 'ninja' 'glm' 'boost')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('6ed205691c2c01e71d38242986e79434e0ba278e1a700530199def43d311ccc6')
+provides=('miracle-wm')
+conflicts=('miracle-wm')
+source=("${pkgname%-ninja}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('b22fcd05033812c4ee505bc29a882c41d61eaa67469a3e0422ea76fff2702f05')
 
 prepare() {
-    sed -i 's/python3/python/g' $srcdir/${pkgname}-${pkgver}/session/usr/bin/libexec/miracle-wm-wait-sni-ready
-    sed -i 's/python3/python/g' $srcdir/${pkgname}-${pkgver}/tools/check_license.py
+    sed -i 's/python3/python/g' $srcdir/${pkgname%-ninja}-${pkgver}/session/usr/bin/libexec/miracle-wm-wait-sni-ready
+    sed -i 's/python3/python/g' $srcdir/${pkgname%-ninja}-${pkgver}/tools/check_license.py
 }
 
 build() {
 
     local _flags=(
         -B build 
-        -S "${pkgname}-${pkgver}" 
+        -S "${pkgname%-ninja}-${pkgver}" 
         -GNinja
         -Wno-dev
         -DCMAKE_BUILD_TYPE=None
@@ -37,6 +39,7 @@ build() {
         # miracle-wm options
         -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib/$pkgname/
         -DSYSTEMD_INTEGRATION=ON
+        -DFEATURE_PLUGIN_SYSTEM=OFF
     )
 
     cmake "${_flags[@]}"

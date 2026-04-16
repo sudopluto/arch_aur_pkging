@@ -1,4 +1,5 @@
-[miracle-wm]
-source = "git"
-git = "https://github.com/miracle-wm-org/miracle-wm.git"
+[miracle-wm-ninja]
+source = "github"
+github = "miracle-wm-org/miracle-wm"
 prefix = "v"
+use_latest_release = true
