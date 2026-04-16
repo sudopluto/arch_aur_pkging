@@ -1,4 +1,5 @@
 [mir]
-source = "git"
-git = "https://github.com/canonical/mir.git"
+source = "github"
+github = "canonical/mir"
 prefix = "v"
+use_latest_release = true
