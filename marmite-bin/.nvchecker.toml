@@ -1,3 +1,5 @@
 [marmite-bin]
-source = "git"
-git = "https://github.com/rochacbruno/marmite.git"
+source = "github"
+github = "rochacbruno/marmite"
+prefix = "v"
+use_latest_release = true
