@@ -1,4 +1,5 @@
-[wlcs]
-source = "git"
-git = "https://github.com/canonical/wlcs.git"
+[wlcs-ninja]
+source = "github"
+github = "canonical/wlcs"
 prefix = "v"
+use_latest_release = true
